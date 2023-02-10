@@ -10,8 +10,8 @@ kotlinx-coroutines = "1.6.4"
 kotlinx-datetime = "0.4.0"
 log4j = "2.19.0"
 mockk = "1.13.4"
-spring = "5.3.25"
-spring-boot = "2.7.8"
+spring = "[5.3, 6[!!5.3.25"
+spring-boot = "[2.7, 3[!!2.7.8"
 versions-gradle-plugin = "0.45.0"
 
 [libraries]
@@ -83,6 +83,10 @@ version.ref = "mockk"
 [libraries.mockk-dsl-jvm]
 module = "io.mockk:mockk-dsl-jvm"
 version.ref = "mockk"
+
+[libraries.spring-bom]
+module = "org.springframework:spring-framework-bom"
+version.ref = "spring"
 
 [libraries.spring-boot]
 module = "org.springframework.boot:spring-boot"
