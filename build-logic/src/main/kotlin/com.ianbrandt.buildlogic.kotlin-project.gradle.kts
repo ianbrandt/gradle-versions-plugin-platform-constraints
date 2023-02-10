@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	kotlin("jvm")
+	id("com.ianbrandt.buildlogic.test.unit-test-suite")
 }
 
 val javaTargetVersion = JavaVersion.VERSION_11.toString()
@@ -11,6 +12,11 @@ kotlin {
 	jvmToolchain {
 		languageVersion.set(JavaLanguageVersion.of(javaTargetVersion))
 	}
+}
+
+dependencies {
+
+	api(platform("com.ianbrandt.platforms:app-platform"))
 }
 
 tasks {
