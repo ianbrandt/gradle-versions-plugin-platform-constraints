@@ -1,7 +1,6 @@
 plugins {
-	id("com.ianbrandt.buildlogic.kotlin-project")
+	id("com.ianbrandt.buildlogic.java-project")
 	id("com.ianbrandt.buildlogic.test.integration-test-suite")
-	kotlin("plugin.spring")
 }
 
 dependencies {
@@ -18,8 +17,6 @@ dependencies {
 	api(platform("com.ianbrandt.platforms:app-platform"))
 
 	implementation("org.springframework.boot:spring-boot-starter-log4j2")
-
-	runtimeOnly(kotlin("reflect"))
 
 	"integrationTestImplementation"("org.springframework.boot:spring-boot-starter-test")
 }

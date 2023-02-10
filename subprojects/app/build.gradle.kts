@@ -16,7 +16,6 @@ dependencies {
 	implementation(libs.spring.boot)
 	implementation(libs.spring.boot.autoconfigure)
 	implementation(libs.spring.context)
-	implementation(libs.bundles.kotlinx.coroutines.jvm)
 
 	integrationTestImplementation(libs.spring.boot.starter.test)
 }

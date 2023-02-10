@@ -1,7 +1,6 @@
 plugins {
 	idea
 	`jvm-test-suite`
-	kotlin("jvm")
 	id("com.ianbrandt.buildlogic.test.unit-test-suite")
 }
 
@@ -22,9 +21,6 @@ testing {
 			sources {
 				java {
 					setSrcDirs(listOf("src/it/java"))
-				}
-				kotlin {
-					setSrcDirs(listOf("src/it/kotlin"))
 				}
 			}
 
@@ -66,10 +62,10 @@ tasks {
 idea {
 	module {
 		testSources.from(
-			kotlin.sourceSets[integrationTestSuiteName].kotlin.srcDirs
+			java.sourceSets[integrationTestSuiteName].java.srcDirs
 		)
 		testResources.from(
-			kotlin.sourceSets[integrationTestSuiteName].resources.srcDirs
+			java.sourceSets[integrationTestSuiteName].resources.srcDirs
 		)
 	}
 }

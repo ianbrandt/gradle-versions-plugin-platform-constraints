@@ -5,11 +5,7 @@ equalsverifier = "3.11.1"
 jetbrains-annotations = "23.0.0"
 jakarta-inject = "2.0.0"
 junit = "5.9.2"
-kotlin = "1.8.10"
-kotlinx-coroutines = "1.6.4"
-kotlinx-datetime = "0.4.0"
 log4j = "2.19.0"
-mockk = "1.13.4"
 spring = "[5.3, 6[!!5.3.25"
 spring-boot = "[2.7, 3[!!2.7.8"
 versions-gradle-plugin = "0.45.0"
@@ -36,53 +32,9 @@ version.ref = "jetbrains-annotations"
 module = "org.junit:junit-bom"
 version.ref = "junit"
 
-[libraries.kotlin-gradle-plugin-dependency]
-module = "org.jetbrains.kotlin:kotlin-gradle-plugin"
-version.ref = "kotlin"
-
-[libraries.kotlin-spring-gradle-plugin-dependency]
-module = "org.jetbrains.kotlin:kotlin-allopen"
-version.ref = "kotlin"
-
-[libraries.kotlinx-coroutines-bom]
-module = "org.jetbrains.kotlinx:kotlinx-coroutines-bom"
-version.ref = "kotlinx-coroutines"
-
-[libraries.kotlinx-coroutines-core]
-module = "org.jetbrains.kotlinx:kotlinx-coroutines-core"
-version.ref = "kotlinx-coroutines"
-
-[libraries.kotlinx-coroutines-core-jvm]
-module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm"
-version.ref = "kotlinx-coroutines"
-
-[libraries.kotlinx-coroutines-test]
-module = "org.jetbrains.kotlinx:kotlinx-coroutines-test"
-version.ref = "kotlinx-coroutines"
-
-[libraries.kotlinx-coroutines-test-jvm]
-module = "org.jetbrains.kotlinx:kotlinx-coroutines-test-jvm"
-version.ref = "kotlinx-coroutines"
-
-[libraries.kotlinx-datetime]
-module = "org.jetbrains.kotlinx:kotlinx-datetime"
-version.ref = "kotlinx-datetime"
-
-[libraries.kotlinx-datetime-jvm]
-module = "org.jetbrains.kotlinx:kotlinx-datetime-jvm"
-version.ref = "kotlinx-datetime"
-
 [libraries.log4j-api]
 module = "org.apache.logging.log4j:log4j-api"
 version.ref = "log4j"
-
-[libraries.mockk]
-module = "io.mockk:mockk"
-version.ref = "mockk"
-
-[libraries.mockk-dsl-jvm]
-module = "io.mockk:mockk-dsl-jvm"
-version.ref = "mockk"
 
 [libraries.spring-bom]
 module = "org.springframework:spring-framework-bom"
@@ -124,30 +76,7 @@ version.ref = "spring-boot"
 module = "org.springframework:spring-context"
 version.ref = "spring"
 
-[bundles]
-
-kotlinx-coroutines-jvm = [
-	"kotlinx-coroutines-core",
-	"kotlinx-coroutines-core-jvm"
-]
-
-kotlinx-coroutines-test-jvm = [
-	"kotlinx-coroutines-test",
-	"kotlinx-coroutines-test-jvm"
-]
-
-kotlinx-datetime-jvm = [
-	"kotlinx-datetime",
-	"kotlinx-datetime-jvm"
-]
-
-mockk-jvm = ["mockk", "mockk-dsl-jvm"]
-
 [plugins]
-
-[plugins.kotlin-gradle-plugin]
-id = "org.jetbrains.kotlin.jvm"
-version.ref = "kotlin"
 
 [plugins.spring-boot-plugin]
 id = "org.springframework.boot"

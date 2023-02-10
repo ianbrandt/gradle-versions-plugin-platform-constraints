@@ -13,13 +13,11 @@ dependencies {
 
 	components.all<SpringBomAlignmentRule>()
 
-	api(platform(libs.kotlinx.coroutines.bom))
 	api(platform(libs.spring.bom))
 	api(platform(libs.spring.boot.bom))
 
 	constraints {
 		api(libs.jetbrains.annotations)
-		api(libs.bundles.kotlinx.datetime.jvm)
 	}
 }
 
