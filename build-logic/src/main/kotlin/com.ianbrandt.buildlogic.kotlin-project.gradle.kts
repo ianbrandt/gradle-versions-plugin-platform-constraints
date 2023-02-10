@@ -16,6 +16,8 @@ kotlin {
 
 dependencies {
 
+	components.all<SpringBomAlignmentRule>()
+
 	api(platform("com.ianbrandt.platforms:app-platform"))
 }
 
@@ -35,6 +37,25 @@ tasks {
 				"-opt-in=kotlin.ExperimentalStdlibApi",
 				"-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
 			)
+		}
+	}
+}
+
+abstract class SpringBomAlignmentRule : ComponentMetadataRule {
+	override fun execute(ctx: ComponentMetadataContext) {
+		ctx.details.run {
+			when (id.group) {
+				"org.springframework" ->
+					belongsTo(
+						"org.springframework:spring-framework-bom:${id.version}",
+						false
+					)
+				"org.springframework.boot" ->
+					belongsTo(
+						"org.springframework.boot:spring-boot-dependencies:${id.version}",
+						false
+					)
+			}
 		}
 	}
 }
