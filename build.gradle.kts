@@ -22,7 +22,9 @@ allprojects {
 
 tasks {
 
-	withType<DependencyUpdatesTask>().configureEach {
+	named<DependencyUpdatesTask>("dependencyUpdates").configure {
+		checkConstraints = true
+		checkBuildEnvironmentConstraints = true
 		rejectVersionIf {
 			isNonStable(candidate.version)
 		}
