@@ -6,6 +6,8 @@ plugins {
 
 dependencies {
 
+	components.all<SpringBomAlignmentRule>()
+
 	modules {
 		module("org.springframework.boot:spring-boot-starter-logging") {
 			replacedBy(
@@ -22,4 +24,23 @@ dependencies {
 	runtimeOnly(kotlin("reflect"))
 
 	"integrationTestImplementation"("org.springframework.boot:spring-boot-starter-test")
+}
+
+abstract class SpringBomAlignmentRule : ComponentMetadataRule {
+	override fun execute(ctx: ComponentMetadataContext) {
+		ctx.details.run {
+			when (id.group) {
+				"org.springframework" ->
+					belongsTo(
+						"org.springframework:spring-framework-bom:${id.version}",
+						false
+					)
+				"org.springframework.boot" ->
+					belongsTo(
+						"org.springframework.boot:spring-boot-dependencies:${id.version}",
+						false
+					)
+			}
+		}
+	}
 }
